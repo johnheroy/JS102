@@ -1,3 +1,61 @@
-//Use this file to implement Part One of your project
+/**
+ * Solutions for JS102 Exercises
+ * @author John Heroy (johnheroy@gmail.com)
+ */
 
 
+
+/**
+ * Objects
+ */
+
+// Declare an object using literal notation.
+var animal = {};
+
+// Assign a property using dot notation.
+animal.username = 'Tigger';
+
+// Add a property using bracket notation.
+animal['tagline'] = 'Bouncing is what Tiggers do best.';
+
+// Declare an array using literal notation and add to our object.
+var noises = [];
+animal['noises'] = noises;
+
+
+/** Loops */
+
+// Loop through the properties of our animal object.
+var count = 0;
+for (var property in animal) {
+  if (property === 'username') {
+    console.log('Hi my name is', animal[property]);
+    // return 'Hi my name is' + animal[property]; => ERROR
+  }
+  if (property === 'tagline') {
+    console.log('I like to say "' + animal[property] + '"');
+  }
+  count++;
+}
+
+
+
+/**
+ * Arrays
+ */
+
+// Declare an array literal with one element.
+var noiseArray = ['woof'];
+
+// Use native arrays to add noises to the beginning and end of noiseArray.
+noiseArray.unshift('tweet');
+noiseArray.push('oink');
+
+noiseArray; // ['tweet', 'woof', 'oink']
+
+// Use bracket notation to add another noise at the end.
+noiseArray[3] = 'chirp';
+
+// Inspect the noise array.
+noiseArray.length;
+noiseArray;
