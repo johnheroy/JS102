@@ -94,3 +94,88 @@ var diddy = {
 
 animals.push(garfield);
 animals.push(diddy);
+
+
+
+/**
+ * Functions
+ */
+
+// Questions 1 & 2
+var AnimalTestUser = function(username) {
+  var animal = {
+    username: username
+  };
+
+  if (arguments.length > 1) {
+    var otherArgs = [];
+    for (var i = 1; i < arguments.length; i++) {
+      otherArgs.push(arguments[i]);
+    }
+    animal.otherArgs = otherArgs;
+  }
+
+  return animal;
+};
+
+// Question 3
+var AnimalCreator = function(username, species, noises, tagline) {
+  var animal = {
+    username: username,
+    species: species,
+    noises: noises,
+    tagline: tagline,
+    friends: []
+  };
+  return animal;
+};
+
+// Questions 4 & 5
+var addFriend = function(animal, friend) {
+  // animal.friends.push(friend);
+  animal.friends.push(friend.username);
+};
+
+// Question 6
+var myFarm = [];
+
+// Create three animals.
+var cloud = AnimalCreator('Cloud', 'sheep', 'You can count on me!',
+  ['baahhh', 'arrgg', 'chewchewchew']);
+var zeny = AnimalCreator('Zeny', 'cow', 'I\'m the one for you!',
+  ['moo', 'moooooo', 'moomoo']);
+var moo = AnimalCreator('Moo', 'pig', 'Indulging myself every day',
+  ['oink', 'oinkoink', 'snort']);
+
+// Make some friends!
+addFriend(cloud, zeny);
+addFriend(cloud, moo);
+addFriend(zeny, moo);
+addFriend(moo, zeny);
+
+// Add them to the farm.
+myFarm.push(cloud);
+myFarm.push(zeny);
+myFarm.push(moo);
+
+// Question 7
+var addMatchesArray = function(farm) {
+  for (var i = 0; i < farm.length; i++) {
+    var animal = farm[i];
+    animal.matches = [];
+  }
+};
+
+addMatchesArray(myFarm);
+
+// Question 8
+var giveMatches = function(farm) {
+  for (var i = 0; i < farm.length; i++) {
+    var animal = farm[i];
+    if (animal.friends.length > 0) {
+      animal.matches.push(animal.friends[0]);
+    }
+  }
+};
+
+giveMatches(myFarm);
