@@ -59,3 +59,38 @@ noiseArray[3] = 'chirp';
 // Inspect the noise array.
 noiseArray.length;
 noiseArray;
+
+// Assign the noiseArray to the 'noises' property of the animal object.
+animal.noises = noiseArray;
+
+// Create an 'animals' collection as an array.
+var animals = [];
+
+// Add the 'animal' object created above to 'animals'.
+animals.push(animal);
+
+// Create 'quackers' object.
+var quackers = {
+  username: 'DaffyDuck',
+  tagline: 'Yippeee!',
+  noises: ['quack', 'honk', 'sneeze', 'growl']
+};
+
+// Add the 'quackers' object to the collection using a different method.
+animals.unshift(quackers);
+
+// Add two more animal objects to the animals collection.
+var garfield = {
+  username: 'Garfield',
+  tagline: 'It\'s all about me-ow!',
+  noises: ['meow', 'purr', 'hiss']
+};
+
+var diddy = {
+  username: 'Diddy Kong',
+  tagline: 'I\'m outta here!',
+  noises: ['whoop', 'screech']
+};
+
+animals.push(garfield);
+animals.push(diddy);
