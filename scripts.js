@@ -179,3 +179,28 @@ var giveMatches = function(farm) {
 };
 
 giveMatches(myFarm);
+
+
+
+/**
+ * Nesting Data
+ */
+
+var friends = [];
+
+friends.push(animals[0].username, animals[1].username);
+
+var relationships = {};
+
+relationships.friends = friends;
+// Object.keys(relationships).length => 1
+
+
+var matches = [];
+relationships.matches = matches;
+relationships.matches.push('pig');
+
+
+for (var i = 0; i < animals.length; i++) {
+  animals[i].relationships = relationships;
+}
